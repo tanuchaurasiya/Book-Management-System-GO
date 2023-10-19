@@ -1,0 +1,24 @@
+# Use root/example as user/password credentials
+version: '3.1'
+services:
+  mysqldb:
+    image: mysql
+    ports: 
+      - 3306:3306
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password 
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test123
+      MYSQL_DATABASE: bookstore 
+    volumes:
+      - ./data:/var/lib/mysql  
+    command: --default-authentication-plugin=mysql_native_password
+
+  adminer:
+    image: book-management-system-image 
+    depends_on:
+      - mysqldb
+    restart: always
+    ports:
+      - 8080:8080

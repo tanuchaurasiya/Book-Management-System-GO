@@ -14,9 +14,8 @@ var (
 )
 
 func Connect() {
-	// var dsn = "tanu:tanu123@/go_test_models?charset=utf8mb4"
-	// var d, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
-	d, err := gorm.Open("mysql", "root:Tanu@1906@/bookstore?charset=utf8&parseTime=True&loc=Local")
+
+	d, err := gorm.Open("mysql", "test:test123@tcp(mysqldb:3306)/bookstore?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		log.Fatal(err)
 	}

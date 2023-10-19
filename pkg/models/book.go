@@ -3,10 +3,8 @@ package models
 import (
 	"book_management_system_golang/pkg/config"
 	"fmt"
-
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	// "gorm.io/gorm"
 )
 
 var db *gorm.DB
